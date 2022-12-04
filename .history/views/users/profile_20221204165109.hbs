@@ -47,14 +47,14 @@
         <div class="card-body bg-white d-flex flex-row flex-wrap">
           {{#if userProfile.Followers.length}}
           {{#each userProfile.Followers}}
-            <a href="/users/{{this.id}}" alt="{{this.name}}">
-              <img class="m-3" src="{{#if this.image}}{{this.image}}{{else}}https://cdn.parenting.com.tw/flipedu/asset/images/user-cover.jpg{{/if}}" width="70px" height="70px" title="{{this.name}}">
-            </a>
+          <a href="/users/{{this.id}}" alt="{{this.name}}">
+            <img class="m-3" src="{{#if this.image}}{{this.image}}{{else}}https://cdn.parenting.com.tw/flipedu/asset/images/user-cover.jpg{{/if}}" width="70px" height="70px" title="{{this.name}}">
+          </a>
           {{/each}}
           {{else}}
-            <h5>
-              {{#unless userProfile.Followers.length}}此用戶尚無追隨者{{/unless}}
-            </h5>
+          <h5>
+            {{#unless userProfile.Followers.length}}此用戶尚無追隨者{{/unless}}
+          </h5>
           {{/if}}
         </div>
       </div>
@@ -89,9 +89,9 @@
               </a>
             {{/each}}
           {{else}}
-            <h5>
-              {{#unless userProfile.FavoritedRestaurants.length}}尚未收藏餐廳{{/unless}}
-            </h5>
+          <h5>
+            {{#unless userProfile.FavoritedRestaurants.length}}尚未收藏餐廳{{/unless}}
+          </h5>
           {{/if}}
         </div>
       </div>

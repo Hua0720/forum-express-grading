@@ -65,6 +65,7 @@ const userController = {
 
         res.render('users/profile', {
           user: getUser(req),
+          userProfile,
           userProfile: userProfile.toJSON(),
           comments
         })

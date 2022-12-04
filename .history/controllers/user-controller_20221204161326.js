@@ -43,6 +43,8 @@ const userController = {
     })
   },
   getUser: (req, res, next) => {
+    const { id } = req.params
+    const user = getUser(req)
     return Promise.all([
       User.findByPk(req.params.id, {
         include: [
@@ -65,6 +67,7 @@ const userController = {
 
         res.render('users/profile', {
           user: getUser(req),
+          userProfile,
           userProfile: userProfile.toJSON(),
           comments
         })

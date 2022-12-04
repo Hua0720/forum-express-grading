@@ -12,12 +12,12 @@
     <div class="m-5" style="width:300px">
       <h5>{{ userProfile.name }}</h5>
       <p class="mt-2">{{userProfile.email}}</p>
-      <p class="mt-5"><strong>{{comments.length}}</strong> 已評論餐廳</p>
-      <p class="mt-0"><strong>{{userProfile.FavoritedRestaurants.length}}</strong> 已收藏餐廳</p>
-      <p class="mt-0"><strong>{{userProfile.Followings.length}}</strong> 追蹤者</p>
-      <p class="mt-0"><strong>{{userProfile.Followers.length}}</strong> 追隨者</p>
+      <p class="mt-4"><strong>{{comments.length}}</strong> 已評論餐廳</p>
+      <p class="mt-1"><strong>{{userProfile.FavoritedRestaurants.length}}</strong> 已收藏餐廳</p>
+      <p class="mt-1"><strong>{{userProfile.Followings.length}}</strong> 追蹤者</p>
+      <p class="mt-1"><strong>{{userProfile.Followers.length}}</strong> 追隨者</p>
       {{#ifCond userProfile.id user.id}}
-        <a href="/users/{{user.id}}/edit" class="btn btn-primary">edit</a>
+      <a href="/users/{{user.id}}/edit" class="btn btn-primary">edit</a>
       {{/ifCond}}
       </div>
     </div>
@@ -47,14 +47,14 @@
         <div class="card-body bg-white d-flex flex-row flex-wrap">
           {{#if userProfile.Followers.length}}
           {{#each userProfile.Followers}}
-            <a href="/users/{{this.id}}" alt="{{this.name}}">
-              <img class="m-3" src="{{#if this.image}}{{this.image}}{{else}}https://cdn.parenting.com.tw/flipedu/asset/images/user-cover.jpg{{/if}}" width="70px" height="70px" title="{{this.name}}">
-            </a>
+          <a href="/users/{{this.id}}" alt="{{this.name}}">
+            <img class="m-3" src="{{#if this.image}}{{this.image}}{{else}}https://cdn.parenting.com.tw/flipedu/asset/images/user-cover.jpg{{/if}}" width="70px" height="70px" title="{{this.name}}">
+          </a>
           {{/each}}
           {{else}}
-            <h5>
-              {{#unless userProfile.Followers.length}}此用戶尚無追隨者{{/unless}}
-            </h5>
+          <h5>
+            {{#unless userProfile.Followers.length}}此用戶尚無追隨者{{/unless}}
+          </h5>
           {{/if}}
         </div>
       </div>
@@ -89,9 +89,8 @@
               </a>
             {{/each}}
           {{else}}
-            <h5>
-              {{#unless userProfile.FavoritedRestaurants.length}}尚未收藏餐廳{{/unless}}
-            </h5>
+            {{#unless comments.length}}尚未收藏餐廳{{/unless}}
+          <h5>尚未收藏餐廳</h5>
           {{/if}}
         </div>
       </div>
