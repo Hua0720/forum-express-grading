@@ -2,5 +2,7 @@ node_modules/
 temp/
 upload/
 
+
 .DS_Store
 .env
+.history
